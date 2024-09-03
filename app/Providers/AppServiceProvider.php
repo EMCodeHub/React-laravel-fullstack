@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema; // Asegúrate de importar el facade Schema
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Establecer la longitud predeterminada de las columnas de cadena para evitar el error de longitud de clave
+        Schema::defaultStringLength(191);
     }
 }
